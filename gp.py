@@ -217,3 +217,11 @@ class Humanplayer:
 
         move = int(raw_input())
         return move
+
+if __name__ == "__main__":
+    print "Training Player..."
+    winner = evolve(5, 100, tournament, maxgen=50)
+    print "Begin the game:"
+    end = gridgame([ Humanplayer(), winner])
+    results = {0:'You Win!', 1:'You loss.', -1:'Peace.'}
+    print results[end]
